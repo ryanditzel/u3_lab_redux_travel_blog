@@ -24,7 +24,7 @@ const PostList = (props) => {
     <div>
       {props.postState.posts.map((post) => (
         <ul key={post.id}>
-          <Link to={`/posts/${post.id}`}>{post.title}</Link>
+          <Link to={`/posts/${post._id}`}>{post.title}</Link>
         </ul>
       ))}
     </div>
