@@ -12,10 +12,11 @@ export const GetPosts = async () => {
 
 export const GetPostDetails = async (id) => {
     try {
-        const res = await Client.get(`/posts/`)
+        const res = await Client.get(`/posts/${id}`)
         console.log('response of post details', res)
-        return res
+        return res.data
     } catch (error) {
         throw error
     }
 }
+
