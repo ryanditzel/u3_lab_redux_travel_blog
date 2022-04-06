@@ -6,7 +6,7 @@ router.get('/', (req, res) => res.send('This is root!'))
 
 router.get('/posts', controllers.getAllPosts)
 
-router.get('/posts/:id/comments', controllers.getCommentsByPostId)
+router.get('/posts/:id', controllers.getPostDetails)
 
 router.post('/comments', controllers.createComment)
 
