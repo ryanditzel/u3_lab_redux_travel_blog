@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { LoadPosts } from "../store/actions/PostActions";
@@ -15,17 +15,6 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 const PostList = (props) => {
-  // const [posts, setPosts] = useState([])
-
-  // const GetPosts = async () => {
-  //     try {
-  //       const res = await axios.get('http://localhost:3001/posts/')
-  //       console.log(res)
-  //       setPosts(res.data.posts)
-  //     } catch (error) {
-  //       throw error
-  //     }
-  //   }
 
   useEffect(() => {
     props.fetchPosts();
