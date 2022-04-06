@@ -1,5 +1,5 @@
-import { GetPosts } from '../../services/PostService'
-import { GET_POSTS } from '../types'
+import { GetPosts, GetPostDetails } from '../../services/PostService'
+import { GET_POSTS, GET_POST_DETAILS } from '../types'
 
 export const LoadPosts = () => {
   return async (dispatch) => {
@@ -9,6 +9,21 @@ export const LoadPosts = () => {
       dispatch({
         type: GET_POSTS,
         payload: posts
+      })
+    } catch (error) {
+      throw error
+    }
+  }
+}
+
+export const LoadPostDetails = (id) => {
+  return async (dispatch) => {
+    try {
+      const postDetails = await GetPostDetails(id)
+
+      dispatch({
+        type: GET_POST_DETAILS,
+        payload: postDetails
       })
     } catch (error) {
       throw error
