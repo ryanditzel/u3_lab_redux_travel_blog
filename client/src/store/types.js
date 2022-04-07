@@ -1,2 +1,5 @@
-export const GET_POSTS = `GET_POSTS`
-export const GET_POST_DETAILS = `GET_POST_DETAILS`
+export const GET_POSTS = 'GET_POSTS'
+export const GET_POST_DETAILS = 'GET_POST_DETAILS'
+export const UPDATE_AUTHOR = 'UPDATE_AUTHOR'
+export const UPDATE_TEXT = 'UPDATE_TEXT'
+export const SUBMIT_COMMENT = 'SUBMIT_COMMENT'

@@ -1,25 +1,24 @@
-import React, { useEffect, useState } from "react";
-
-import { Link } from "react-router-dom";
-import { connect } from "react-redux";
-import { LoadPosts } from "../store/actions/PostActions";
+import React, { useEffect, useState } from 'react'
+import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
+import { LoadPosts } from '../store/actions/PostActions'
 
 const mapStateToProps = ({ postState }) => {
-  return { postState };
-};
+  return { postState }
+}
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchPosts: () => dispatch(LoadPosts()),
-  };
-};
+    fetchPosts: () => dispatch(LoadPosts())
+  }
+}
 
 const PostList = (props) => {
-
-  useEffect(() => {
-    props.fetchPosts();
-  }, []);
-
+  
+  useEffect (() => {
+    props.fetchPosts()
+  },[])
+  
   return (
     <div>
       {props.postState.posts.map((post) => (
@@ -28,7 +27,7 @@ const PostList = (props) => {
         </ul>
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default connect(mapStateToProps, mapDispatchToProps)(PostList);
+export default connect(mapStateToProps, mapDispatchToProps)(PostList)
